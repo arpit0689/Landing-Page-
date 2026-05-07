@@ -118,6 +118,7 @@ const Hero = () => {
             flex
             items-center
             justify-center
+            bg-transparent
           ">
 
             <RobotModel />

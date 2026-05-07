@@ -43,7 +43,8 @@ const Loader = () => {
 
 const RobotModel = () => {
   return (
-    <Canvas camera={{ position: [0, 1, 10], fov: 40 }}>
+    <Canvas camera={{ position: [0, 1, 10], fov: 40 }}
+    gl={{ alpha: true }} >
 
       {/* Lights */}
       <ambientLight intensity={2.5} />
