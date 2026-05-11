@@ -7,6 +7,7 @@ import Stats from "./components/stats/Stats"
 import Process from "./components/process/Process"
 import Testimonials from "./components/testimonials/Testimonials"
 import CTA from "./components/cta/CTA"
+import Careers from "./components/careers/Careers"
 import Footer from "./components/layout/Footer"
 
 function App() {
@@ -31,7 +32,8 @@ function App() {
         <Process />
         <Testimonials />
         <CTA />
-       <Footer />
+        <Careers />
+        <Footer />
 
       </div>
 

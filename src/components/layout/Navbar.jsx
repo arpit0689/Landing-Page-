@@ -2,6 +2,15 @@ import { useState } from "react"
 import { Link } from "react-scroll"
 import { Menu, X } from "lucide-react"
 
+const navItems = [
+  { id: "home", label: "Home" },
+  { id: "solutions", label: "Solutions" },
+  { id: "robots", label: "Robots" },
+  { id: "industries", label: "Industries" },
+  { id: "careers", label: "Careers" },
+  { id: "contact", label: "Contact" },
+]
+
 const Navbar = () => {
 
   const [open, setOpen] = useState(false)
@@ -19,60 +28,19 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-10 text-gray-300">
 
-          <li>
-            <Link
-              to="home"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-cyan-400 transition"
-            >
-              Home
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="solutions"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-cyan-400 transition"
-            >
-              Solutions
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="robots"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-cyan-400 transition"
-            >
-              Robots
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="industries"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-cyan-400 transition"
-            >
-              Industries
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-cyan-400 transition"
-            >
-              Contact
-            </Link>
-          </li>
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <Link
+                to={item.id}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="cursor-pointer hover:text-cyan-400 transition"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
 
         </ul>
 
@@ -95,18 +63,19 @@ const Navbar = () => {
 
           <ul className="flex flex-col gap-6 text-gray-300">
 
-            {["home", "solutions", "robots", "industries", "contact"].map((item) => (
+            {navItems.map((item) => (
 
-              <li key={item}>
+              <li key={item.id}>
 
                 <Link
-                  to={item}
+                  to={item.id}
                   smooth={true}
                   duration={500}
+                  offset={-80}
                   onClick={() => setOpen(false)}
                   className="cursor-pointer hover:text-cyan-400 transition capitalize text-lg"
                 >
-                  {item}
+                  {item.label}
                 </Link>
 
               </li>
